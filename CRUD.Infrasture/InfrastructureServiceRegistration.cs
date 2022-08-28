@@ -1,4 +1,5 @@
-﻿using CRUD.Infrasture.Context;
+﻿using CRUD.Application.Presistencs;
+using CRUD.Infrasture.Context;
 using CRUD.Infrasture.Repository;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -13,8 +14,9 @@ namespace CRUD.Infrasture
         {
 
             services.AddDbContext<CustomDbContext>(options =>
-                options.UseSqlServer(configuration.GetConnectionString("CusConnectionString"),
-                builder => { builder.EnableRetryOnFailure(5, TimeSpan.FromSeconds(10), null); }));
+                options.UseOracle(configuration.GetConnectionString("CusConnectionString")
+                //,builder => { builder.CommandTimeout(5); }
+                ));
 
             services.AddScoped(typeof(IRepository<>), typeof(Repositroy<>));
             

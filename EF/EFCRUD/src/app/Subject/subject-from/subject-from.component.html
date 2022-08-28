@@ -1,0 +1,43 @@
+<div>
+  <mat-toolbar class="px-2 py-1 max-h-4" [ngStyle]="{'background-color':'#ef5350'}">
+    <mat-toolbar-row class="d-flex justify-content-between">
+      <span>Form name</span>
+
+      <button mat-icon-button (click)="matDialogRef.close()" aria-label="Close dialog">
+        <mat-icon class="text-current">close</mat-icon>
+      </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <div class="px-4 py-2">
+    <form  #heroForm="ngForm">
+      <!-- <mat-form-field appearance="outline" >
+        <mat-label>Student Name</mat-label>
+        <mat-select name="spRelationDegree" [(ngModel)]="selId" required>
+          <mat-option *ngFor="let item of selItems" [value]="item.id" >
+            {{ item.label }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field> -->
+      <mat-form-field class="mr-2" appearance="outline" >
+        <mat-label>Name</mat-label>
+        <input matInput name="name"  type="text" />
+      </mat-form-field>
+
+
+      <mat-form-field appearance="outline" >
+        <mat-label>Surname</mat-label>
+        <input matInput name="surname"  type="text" />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Age</mat-label>
+        <input matInput name="age" type="text" />
+      </mat-form-field>
+
+      <div class="d-flex justify-content-between" >
+        <button mat-raised-button (click)="onClose()">Close</button>
+        <button type="button" mat-raised-button color="accent" class="save-button" (click)="onSave()"
+          [disabled]="!heroForm.form.valid">Save</button>
+      </div>
+    </form>
+  </div>
+</div>

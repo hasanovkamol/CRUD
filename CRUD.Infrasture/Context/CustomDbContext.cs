@@ -21,7 +21,9 @@ namespace CRUD.Infrasture.Context
 
             base.OnModelCreating(builder);
         }
+        
         public DbSet<Student> Students { get; set; }
         public DbSet<Subject> Subjects { get; set; }
+        public DbSet<StudentSubject> SudentSubject { get; set; }
     }
 }

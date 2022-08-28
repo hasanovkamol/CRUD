@@ -1,0 +1,8 @@
+::ng-deep .mat-dialog-container{
+  padding: inherit !important;
+  border-radius: 10px !important;
+
+}
+.mat-toolbar.mat-primary{
+  background-color: #f44336 !important;
+}

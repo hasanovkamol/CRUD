@@ -1,0 +1,74 @@
+<p-confirmDialog
+  header="Confirmation"
+  icon="pi pi-exclamation-triangle"
+></p-confirmDialog>
+
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-danger">
+            <h4 class="card-title">Subject</h4>
+            <p class="card-category">All subject item</p>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table">
+                <thead class="text-primary">
+                  <th class="col-1">ID</th>
+                  <th class="col-2">Name</th>
+                  <th class="col-2">Country</th>
+                  <th class="col-2">City</th>
+                  <th class="col-2">Salary</th>
+                  <th class="col-2">Salary</th>
+                  <th class="col-1 td-actions text-right">
+                    <button
+                      mat-raised-button
+                      matTooltip="Remove"
+                      type="button"
+                      (click)="subjectService.onAdd()"
+                      class="btn btn-primary"
+                    >
+                      <span class="px-1">Create </span>
+                    </button>
+                  </th>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>Dakota Rice</td>
+                    <td>Niger</td>
+                    <td>Niger</td>
+                    <td>Oud-Turnhout</td>
+                    <td class="text-primary">$36,738</td>
+                    <td class="td-actions text-right">
+                      <button
+                        mat-raised-button
+                        type="button"
+                        matTooltip="Edit Task"
+                        class="btn btn-primary btn-link btn-sm btn-just-icon"
+                        (click)="subjectService.onEdit(1)"
+                      >
+                        <i class="material-icons">edit</i>
+                      </button>
+                      <button
+                        (click)="subjectService.onDelete(1)"
+                        mat-raised-button
+                        type="button"
+                        matTooltip="Remove"
+                        class="btn btn-danger btn-link btn-sm btn-just-icon"
+                      >
+                        <i class="material-icons">delete</i>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
