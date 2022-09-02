@@ -1,0 +1,18 @@
+version: '3.4'
+
+services:
+  crud:
+    image: ${DOCKER_REGISTRY-}crud
+    build:
+      context: .
+      dockerfile: CRUD/Dockerfile
+  fe:
+    container_name: crudFE
+    build: .
+    working_dir: CRUD/EF/EFCRUD/src/app
+    volumes:
+      - ./:CRUD/EF/EFCRUD/src/app
+    ports:
+      - '4200:4200'
+    command: >
+      bash -c "npm install --quiet --no-progress && npm rebuild node-sass && ng serve --host 0.0.0.0 --port 4200 --open"

@@ -1,0 +1,23 @@
+# Frod end uchun docker file
+FROM node:v16.15.1
+
+WORKDIR /src
+
+
+COPY ./src/index.html  docker.io/library/node:v16.15.1
+
+RUN npm install \
+        && npm run build \
+        && ng serve --port 4202 --open
+
+EXPOSE 4202
+
+
+# FROM node:12.7-alpine AS build
+# WORKDIR efcrud/src
+# COPY package.json package-lock.json ./
+# RUN npm install \
+#         && npm run build \
+#         && ng serve --port 4202 --open
+
+# EXPOSE 4202
